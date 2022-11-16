@@ -15,7 +15,7 @@ export default function HomeScreen ({ navigation }) {
       loadNotes();
     });
     return load;
-  })
+  }, [])
 
   const loadNotes = () => {
     axios.get('/api/notes')

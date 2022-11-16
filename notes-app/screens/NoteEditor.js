@@ -82,7 +82,7 @@ export default function EditorScreen ({ route, navigation }) {
       ) : () => (<></>),
       headerTitle: content.length == 0 ? 'New Note' : 'Edit Note',
     });
-  });
+  }, []);
 
   const styles = StyleSheet.create({
     container: {
