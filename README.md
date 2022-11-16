@@ -17,15 +17,15 @@
 3. Run *npm run develop* to start the server
 4. Create admin user
 
-    ![My Remote Image](https://user-images.githubusercontent.com/70300320/202225312-f587e48f-1676-44bd-8b28-65fa622205bb.png)
+    ![](https://user-images.githubusercontent.com/70300320/202225312-f587e48f-1676-44bd-8b28-65fa622205bb.png)
 
 5. Update Permissions
 
-     - Go to Settings => Roles
+     - Go to Settings => Roles => Public
      - Under Permissions, expand Note permissions
      - Select all permissions
      - Click *Save* at top right
-    ![My Remote Image](https://user-images.githubusercontent.com/70300320/202224615-74f17da0-0812-4d59-b9e1-b6c6578109fd.png)
+    ![](https://user-images.githubusercontent.com/70300320/202224615-74f17da0-0812-4d59-b9e1-b6c6578109fd.png)
 
 
 ## Expo
@@ -35,7 +35,7 @@
 3. Run *npm start* to start the Metro bundler
 4. Change the **base URL** in **/screens/App.js** to the LAN address running the Expo Metro bundler
 
-    ![My Remote Image](https://user-images.githubusercontent.com/70300320/202224183-a7b83e6a-3d5f-420c-8426-bfec95104a63.png)
+    ![](https://user-images.githubusercontent.com/70300320/202224183-a7b83e6a-3d5f-420c-8426-bfec95104a63.png)
 
 5. Scan the QR code to open Expo Go
 
