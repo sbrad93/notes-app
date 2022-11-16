@@ -15,14 +15,15 @@ export default function HomeScreen ({ navigation }) {
       loadNotes();
     });
     return load;
-  }, [])
+  })
 
   const loadNotes = () => {
     axios.get('/api/notes')
       .then(({ data }) => {
         setNotes(data.data);
         setLoading(false);
-      }).catch((e) => {
+      })
+      .catch((e) => {
         console.error(e);
         setMessage('An error occurred, please try again later.');
         setLoading(false);
@@ -34,7 +35,7 @@ export default function HomeScreen ({ navigation }) {
       {!loading && !notes.length && <Caption style={{textAlign: 'center', marginTop: 20}}>Press the + to create a note</Caption>}
       <FlatList
         data={notes}
-        renderItem={({ item }) => (
+        renderItem={({item}) => (
           <List.Item 
             key={item.id}
             title={item.attributes.title}

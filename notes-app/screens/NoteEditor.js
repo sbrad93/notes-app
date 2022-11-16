@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useLayoutEffect, useRef, useState } from 'react';
 import { RichEditor, RichToolbar, actions, defaultActions } from "react-native-pell-rich-editor";
-import { StyleSheet, Keyboard, Share, KeyboardAvoidingView, ScrollView, View, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, Keyboard, Share, KeyboardAvoidingView, ScrollView, View } from 'react-native';
 import { IconButton, Button, Snackbar, TextInput } from 'react-native-paper';
 
 export default function EditorScreen ({ route, navigation }) {
@@ -36,20 +36,22 @@ export default function EditorScreen ({ route, navigation }) {
       editor.current.blurContentEditor();
       Keyboard.dismiss();
       console.log(content);
-    }).catch((e) => {
+    })
+    .catch((e) => {
       console.error(e);
       setMessage('An error occurred, please try again later.')
-    })
+    });
   }
 
   const deleteNote = () => {
     axios.delete('/api/notes/' + route.params.note.id)
       .then(() => {
       navigation.goBack();
-      }).catch((e) => {
+      })
+      .catch((e) => {
         console.error(e);
         setMessage('An error occurred, please try again later.');
-      })
+      });
   }
 
   const share = async () => {
@@ -80,7 +82,7 @@ export default function EditorScreen ({ route, navigation }) {
       ) : () => (<></>),
       headerTitle: content.length == 0 ? 'New Note' : 'Edit Note',
     });
-  }, []);
+  });
 
   const styles = StyleSheet.create({
     container: {
